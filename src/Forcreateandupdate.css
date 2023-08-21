@@ -1,0 +1,61 @@
+.forcreateform{
+    background-color: rgb(0, 0, 0,0.1);
+    display: flex;
+    justify-content: center;
+    height: 747px;
+    align-items: center;
+  }
+  .forform{
+    background-color: rgb(0, 0, 0,0.2);
+    width: 600px;
+    height: 300px;
+  }
+  .createuser{
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .formhere{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .manipulatename{
+    text-align: center;
+    width: 350px;
+    border: none;
+    border-radius: 10px;
+    height: 35px;
+  }
+  .manipulateage{
+    text-align: center;
+    width: 350px;
+    border: none;
+    border-radius: 10px;
+    height: 35px;
+    margin-top: 20px;
+  }
+  .forcreatebutton{
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+    height: 35px;
+    margin-top: 20px;
+    background-color: gold;
+  }
+  .forcreatebutton:hover{
+    background-color: black;
+    color: white;
+  }
+  .manipulateemail{
+    text-align: center;
+    width: 350px;
+    border: none;
+    border-radius: 10px;
+    height: 35px;
+    margin-top: 20px;
+  }
