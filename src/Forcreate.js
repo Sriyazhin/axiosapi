@@ -3,7 +3,6 @@ import axios from 'axios';
 import './Forcreateandupdate.css';
 import { useNavigate } from "react-router-dom";
 
-
 function Forcreate(){
     
     const [name,setName] = useState('');
@@ -13,7 +12,7 @@ function Forcreate(){
       
       const CreateUser = () => {
         axios.post('https://64dc7b7ce64a8525a0f68ee2.mockapi.io/Venu',{name:name,age:age,email:email})
-        
+        .then(res=>navigate('/'))
     }
     
 
@@ -27,7 +26,7 @@ function Forcreate(){
             <input type='number' className="manipulateage" placeholder="Age" value={age} onChange={(e)=>setAge(e.target.value)} />        
             <input type='email' className="manipulateemail" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} />
         
-            <button className="forcreatebutton" onClick={()=>{CreateUser(); navigate('/')}}>CREATE</button>
+            <button className="forcreatebutton" onClick={CreateUser}>CREATE</button>
             </form>
             </div>
             </div>
