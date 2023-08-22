@@ -6,29 +6,16 @@ import { useNavigate } from "react-router-dom";
 
 function Forcreate(){
     
-    const [users,setUsers] = useState([]);
     const [name,setName] = useState('');
     const [age,setAge] = useState('');
     const [email,setEmail] = useState('');
-    const [updateTrigger, setUpdateTrigger] = useState(false);
     const navigate = useNavigate();
-
-
-    const GetUser = () => {
-        axios.get('https://64dc7b7ce64a8525a0f68ee2.mockapi.io/Venu')
-        .then(res=>setUsers(res.data))
-      }
       
       const CreateUser = () => {
         axios.post('https://64dc7b7ce64a8525a0f68ee2.mockapi.io/Venu',{name:name,age:age,email:email})
-        .then(res=>GetUser())
+        
     }
     
-
-      useEffect (() => {
-        GetUser()
-        
-      },[]) 
 
     return(
         <div className="forcreateform">
