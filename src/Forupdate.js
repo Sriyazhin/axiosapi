@@ -22,7 +22,7 @@ function Forupdate(){
 
     const Updateuser = () => {
         axios.put(`https://64dc7b7ce64a8525a0f68ee2.mockapi.io/Venu/`+id,values)
-        
+        .then(res=>navigate('/'))
       }
 
       useEffect(()=>{
@@ -38,7 +38,7 @@ function Forupdate(){
         <input type='text' className="manipulatename" value={values.name} onChange={e=> setValues({...values, name: e.target.value})} /> 
         <input type='number' className="manipulateage" value={values.age} onChange={e=>setValues({...values, age: e.target.value})} />
         <input type='email' className="manipulateemail" value={values.email} onChange={e=>setValues({...values, email: e.target.value})} /> 
-        <button className="forcreatebutton" onClick={()=>{Updateuser(); navigate('/');}}>UPDATE</button>
+        <button className="forcreatebutton" onClick={Updateuser}>UPDATE</button>
         </form>
     </div>
     </div>
