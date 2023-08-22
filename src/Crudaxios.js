@@ -1,46 +1,24 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import Forupdate from "./Forupdate";
-import Forcreate from './Forcreate';
-import { Link, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import './App.css';
 
 function Crudaxios() {
     const [users,setUsers] = useState([]);
-    const [name,setName] = useState('');
-    const [age,setAge] = useState('');
-    const [newName,setNewName] = useState('');
-    const [newAge,setNewAge] = useState('');
-    const [updateTrigger, setUpdateTrigger] = useState(false);
     const navigate = useNavigate();
-
-
-    const clearForm = () => {
-        setName('');
-        setAge('');
-        setNewName('');
-        setNewAge('');
-      };
 
     const GetUser = () => {
         axios.get('https://64dc7b7ce64a8525a0f68ee2.mockapi.io/Venu')
         .then(res=>setUsers(res.data))
       }
-
-
+    
       function DeleteUser (currentId) {
         axios.delete(`https://64dc7b7ce64a8525a0f68ee2.mockapi.io/Venu/${currentId}`)
-        .then(res=>setUpdateTrigger(!updateTrigger))
+        .then(res=>GetUser())
       }
-      
-      // const Updateuser = () => {
-      //   axios.put(`https://64dc7b7ce64a8525a0f68ee2.mockapi.io/Venu/${userid}`,{name:newName,age:newAge})
-      //   .then(res=>setUpdateTrigger(!updateTrigger))
-      // }
-
+    
       useEffect (() => {
         GetUser()
-        
       },[updateTrigger]) 
 
     return(
